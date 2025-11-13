@@ -1,0 +1,16 @@
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\bin\Debug\net8.0\AgendaApp.Application.deps.json
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\bin\Debug\net8.0\AgendaApp.Application.dll
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\bin\Debug\net8.0\AgendaApp.Application.pdb
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\bin\Debug\net8.0\AgendaApp.Domain.dll
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\bin\Debug\net8.0\AgendaApp.Domain.pdb
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\obj\Debug\net8.0\AgendaApp.Application.csproj.AssemblyReference.cache
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\obj\Debug\net8.0\AgendaApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\obj\Debug\net8.0\AgendaApp.Application.AssemblyInfoInputs.cache
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\obj\Debug\net8.0\AgendaApp.Application.AssemblyInfo.cs
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\obj\Debug\net8.0\AgendaApp.Application.csproj.CoreCompileInputs.cache
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\obj\Debug\net8.0\AgendaApp.Application.sourcelink.json
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\obj\Debug\net8.0\AgendaAp.9C510548.Up2Date
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\obj\Debug\net8.0\AgendaApp.Application.dll
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\obj\Debug\net8.0\refint\AgendaApp.Application.dll
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\obj\Debug\net8.0\AgendaApp.Application.pdb
+E:\coding\blue-desafio\backend\src\AgendaApp.Application\obj\Debug\net8.0\ref\AgendaApp.Application.dll
