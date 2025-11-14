@@ -13,6 +13,7 @@ namespace AgendaApp.Infrastructure
             this IServiceCollection services, 
             IConfiguration configuration)
         {
+            
             // DbContext
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));

@@ -13,7 +13,7 @@ namespace AgendaApp.Infrastructure.Data
                 var basePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..", "AgendaApp.API"));
 
                 IConfigurationRoot configuration = new ConfigurationBuilder()
-                    .SetBasePath(basePath) // Ou ajuste o path se necessário
+                    .SetBasePath(basePath)
                     .AddJsonFile("appsettings.json")
                     .Build();
 

@@ -1,19 +1,23 @@
 using AgendaApp.Domain.Interfaces;
 using MediatR;
 using AgendaApp.Application.Exceptions;
+using AutoMapper;
+using AgendaApp.Application.DTOs;
 
 namespace AgendaApp.Application.Commands.UpdateContact
 {
-    public class UpdateContactCommandHandler : IRequestHandler<UpdateContactCommand, Unit>
+    public class UpdateContactCommandHandler : IRequestHandler<UpdateContactCommand, ContactDto>
     {
         private readonly IContactRepository _repository;
+        private readonly IMapper _mapper;
 
-        public UpdateContactCommandHandler(IContactRepository repository)
+        public UpdateContactCommandHandler(IContactRepository repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
-        public async Task<Unit> Handle(UpdateContactCommand request, CancellationToken cancellationToken)
+        public async Task<ContactDto> Handle(UpdateContactCommand request, CancellationToken cancellationToken)
         {
             var contact = await _repository.GetByIdAsync(request.Id);
             if (contact == null)
@@ -36,7 +40,7 @@ namespace AgendaApp.Application.Commands.UpdateContact
             await _repository.UpdateAsync(contact);
             await _repository.SaveChangesAsync();
 
-            return Unit.Value;
+            return _mapper.Map<ContactDto>(contact);
         }
     }
 }

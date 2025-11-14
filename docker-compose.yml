@@ -1,0 +1,64 @@
+services:
+  # Banco de dados PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    container_name: agenda_postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: agenda
+      POSTGRES_INITDB_ARGS: "-c max_connections=200"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - agenda_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d agenda"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend .NET
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: agenda_backend
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=agenda;Username=admin;Password=admin"
+      Jwt__Key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30"
+      Jwt__Issuer: "AgendaApp"
+      Jwt__Audience: "AgendaAppUser"
+      ASPNETCORE_URLS: "http://0.0.0.0:5000"
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - agenda_network
+
+  # Frontend Vue
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: agenda_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - agenda_network
+
+# Volumes persistentes
+volumes:
+  postgres_data:
+
+# Rede interna
+networks:
+  agenda_network:
+    driver: bridge
