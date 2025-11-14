@@ -1,50 +1,58 @@
 # =====================================================
-# .gitignore Unificado para Projeto .NET + Vue
-# (Raiz do Projeto)
+# .gitignore para Projeto .NET + Vue
 # =====================================================
 
 # =====================================================
-# .NET Core - Backend
+# .NET Core
 # =====================================================
-backend/bin/
-backend/obj/
-backend/**/*.dll
-backend/**/*.exe
-backend/**/*.pdb
-backend/**/*.so
-backend/**/*.dylib
-backend/**/*.runtimeconfig.json
-backend/**/*.deps.json
-backend/Migrations/
-backend/*.nuget.props
-backend/*.nuget.targets
-backend/project.lock.json
-backend/project.assets.json
-backend/**/.ntvs_analysis.dat
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+*.runtimeconfig.json
+*.deps.json
+
+# =====================================================
+# Entity Framework & Migrations
+# =====================================================
+Migrations/
+
+# =====================================================
+# Visual Studio
+# =====================================================
+.vs/
+.vscode/
+*.sln.iml
+*.user
+*.suo
+*.config
+!Web.config
 
 # =====================================================
 # NuGet
 # =====================================================
 .nuget/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.assets.json
 *.nupkg
 *.snupkg
 NuGetFallbackFolder/
 packages/
 
 # =====================================================
-# Node.js / Vue - Frontend
+# IDE Local Configurations
 # =====================================================
-frontend/node_modules/
-frontend/dist/
-frontend/npm-debug.log
-frontend/yarn-error.log
-frontend/.pnp
-frontend/.pnp.js
-
-# =====================================================
-# Vite
-# =====================================================
-frontend/.vite/
+.idea/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+Thumbs.db
 
 # =====================================================
 # Ambiente & Configurações Sensíveis
@@ -54,42 +62,6 @@ frontend/.vite/
 .env.*.local
 appsettings.Development.json
 appsettings.*.local.json
-frontend/.env.local
-
-# =====================================================
-# IDE Local Configurations
-# =====================================================
-.vs/
-.vscode/
-.idea/
-*.sln.iml
-*.user
-*.suo
-*.swp
-*.swo
-*~
-.#*
-
-# =====================================================
-# Visual Studio
-# =====================================================
-.vs/
-*.sln.iml
-publish/
-PublishProfiles/
-
-# =====================================================
-# Rider
-# =====================================================
-.idea/
-out/
-
-# =====================================================
-# ReSharper
-# =====================================================
-_ReSharper*/
-*.resharper
-.resharper.user
 
 # =====================================================
 # Logs & Temporários
@@ -97,12 +69,59 @@ _ReSharper*/
 *.log
 logs/
 Logs/
-**/*.log
-**/*.tmp
-**/*.temp
+*.txt
+*.tmp
+*.temp
+~$*
 
 # =====================================================
-# Code Coverage & Tests
+# Node.js / Vue
+# =====================================================
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+.pnp
+.pnp.js
+
+# =====================================================
+# Vue.js Specific
+# =====================================================
+.DS_Store
+local_modules/
+*.suo
+*.njsproj
+*.sln.iml
+
+# =====================================================
+# Vite
+# =====================================================
+.vite/
+
+# =====================================================
+# Code Editor Extensions
+# =====================================================
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# =====================================================
+# Build Artifacts
+# =====================================================
+build/
+dist/
+release/
+*.zip
+
+# =====================================================
+# Docker
+# =====================================================
+.docker/
+
+# =====================================================
+# Coverage & Test Reports
 # =====================================================
 coverage/
 TestResults/
@@ -111,11 +130,12 @@ codecov.yml
 *.trx
 
 # =====================================================
-# Build Artifacts
+# Backup Files
 # =====================================================
-build/
-release/
-*.zip
+*.bak
+*.backup
+*.orig
+*.rej
 
 # =====================================================
 # OS Files
@@ -129,15 +149,29 @@ $RECYCLE.BIN/
 .LSOverride
 
 # =====================================================
-# Backup Files
+# Rider
 # =====================================================
-*.bak
-*.backup
-*.orig
-*.rej
+.idea/
+*.sln.iml
+out/
 
 # =====================================================
-# BinLog
+# ReSharper
+# =====================================================
+_ReSharper*/
+*.resharper
+.resharper.user
+
+# =====================================================
+# Visual Studio Code
+# =====================================================
+.vscode/
+*.code-workspace
+.vscode/settings.json
+.vscode/extensions.json
+
+# =====================================================
+# BinLog (Binary Logs)
 # =====================================================
 *.binlog
 
@@ -151,7 +185,7 @@ $RECYCLE.BIN/
 *.ldf
 
 # =====================================================
-# Certificados SSL (se houver)
+# Certificados SSL Local (se houver)
 # =====================================================
 *.pfx
 *.pem
@@ -159,9 +193,16 @@ $RECYCLE.BIN/
 *.crt
 
 # =====================================================
-# Docker Local
+# Performance
 # =====================================================
-.docker/
+*.ntvs_analysis.dat
+.ntvs_analysis.dat_deleteme
+
+# =====================================================
+# Publicação
+# =====================================================
+PublishProfiles/
+publish/
 
 # =====================================================
 # Azure
@@ -169,13 +210,14 @@ $RECYCLE.BIN/
 .azure/
 
 # =====================================================
+# Arquivos Temp do Editor
+# =====================================================
+*.swp
+*.swo
+*~
+.#*
+
+# =====================================================
 # TypeScript
 # =====================================================
 *.tsbuildinfo
-
-# =====================================================
-# Arquivos Específicos do Editor
-# =====================================================
-.sublime-project
-.sublime-workspace
-*.code-workspace
