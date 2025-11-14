@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AgendaApp.UnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+995987d602f2215fd13f2addfb021c0a61139856")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6d96406b9aace27da3ebfd40b1ba524445d964d")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgendaApp.UnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgendaApp.UnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
